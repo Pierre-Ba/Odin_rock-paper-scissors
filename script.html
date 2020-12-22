@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Function library example</title>
+  
+</head>
+<body>
+<script>
+
+let playerChoice;
+let computer;
+let playerScore = 0;
+let computerScore = 0;
+
+function computerPlay () {
+  let myArray = ["Rock", "Paper", "Scissors"];
+  return myArray [Math.floor(Math.random() * myArray.length)];
+  
+};
+
+function playerSelection () {
+return prompt("Please enter your choice","Rock Paper Scissors?")
+};
+
+
+
+
+function playRound(playerChoice, computer) {
+
+      playerChoice = playerSelection().toLowerCase();
+      computer = computerPlay().toLowerCase();
+
+if (playerChoice == "rock" && computer == "scissors") {
+     playerScore += 1;
+    return "You win! Rock beats Scissors.";
+} else if (playerChoice == "rock" && computer == "paper") {
+     computerScore += 1;
+    return "You lose. Paper beats Rock.";
+} else if (playerChoice == "paper" && computer == "rock") {
+    playerScore += 1;
+    return "You win! Paper beats Rock."
+} else if (playerChoice == "paper" && computer == "scissors") {
+    computerScore += 1;
+    return "You lose. Scissors beat Paper."
+} else if (playerChoice == "scissors" && computer == "paper") {
+    playerScore += 1;
+    return "You win! Scissors beat Paper."
+} else if (playerChoice == "scissors" && computer == "rock") {
+    computerScore += 1;
+    return "You lose. Rock beats Scissors"
+} else if (playerChoice == computer) {
+    return "It's a draw. Play again!"
+};
+
+};
+
+
+let round;
+
+function game (round) {
+
+   
+  round = playRound();
+
+
+
+    
+
+  </script>
+</html>
+</body>
