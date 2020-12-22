@@ -8,23 +8,28 @@
 <body>
 <script>
 
+/* Declare some global variables for the game */
+
 let playerChoice;
 let computer;
 let playerScore = 0;
 let computerScore = 0;
+
+/* Create a function for the computer to randomly play rock paper scissors */
 
 function computerPlay () {
   let myArray = ["Rock", "Paper", "Scissors"];
   return myArray [Math.floor(Math.random() * myArray.length)];
   
 };
+/* Create a function for the player so he can enter his selection on a prompt */
 
 function playerSelection () {
 return prompt("Please enter your choice","Rock Paper Scissors?")
 };
 
 
-
+/* Create a function to play one round. In the function make sure the score is being kept */
 
 function playRound(playerChoice, computer) {
 
@@ -55,14 +60,20 @@ if (playerChoice == "rock" && computer == "scissors") {
 
 };
 
+/* Create a function for a game of 5 rounds */
 
-let round;
+function game (playRound) {
+    for (var i = 0; i < 5; i++) {
+        playRound();
+    };
+};
 
-function game (round) {
+/* Create a function to reset the scores of the players */
 
-   
-  round = playRound();
-
+function reset () {
+    playerScore = 0;
+    computerScore = 0;
+};
 
 
     
